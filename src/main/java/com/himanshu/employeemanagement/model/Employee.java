@@ -7,8 +7,9 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "EmpId")
+    private String id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -19,11 +20,11 @@ public class Employee {
     @Column(name = "email_Id")
     private String emailId;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -57,7 +58,7 @@ public class Employee {
 	 * @param lastName
 	 * @param emailId
 	 */
-	public Employee(long id, String firstName, String lastName, String emailId) {
+	public Employee(String id, String firstName, String lastName, String emailId) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
