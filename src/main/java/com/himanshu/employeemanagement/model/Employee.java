@@ -3,7 +3,7 @@ package com.himanshu.employeemanagement.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "employee_date")
+@Table(name = "employee_data")
 public class Employee {
 
     @Id
@@ -80,6 +80,14 @@ public class Employee {
 		System.out.println(" ");
 		
 	}
-    
-    
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emailId='" + emailId + '\'' +
+                '}';
+    }
 }

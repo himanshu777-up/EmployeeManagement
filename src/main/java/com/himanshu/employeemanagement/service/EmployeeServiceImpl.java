@@ -18,12 +18,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getAllEmployee() {
     	
         List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee(1, "abc1", "abc2", "abc@abc"));
+//        employeeList.add(new Employee(1, "abc1", "abc2", "abc@abc"));
+        employeeRepo.save(new Employee(1, "abc1", "abc2", "abc@abc"));
         employeeRepo.findAll().forEach(employeeList::add);
-        System.out.println("get  all topics method called");
+        System.out.println("Method called to get the list of all the employees");
         for(Employee employee: employeeList) {
-        	
-        	employee.displayInfo();
+
+            System.out.println(employee);
         }
         return employeeList;
 
